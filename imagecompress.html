@@ -2,316 +2,323 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description"
-    content="Free online image compression tool. Compress JPEG, PNG, and WebP images easily. Choose compression level and reduce image size quickly.">
-  <meta name="keywords" content="Image Compression, Compress Images, Reduce Image Size, JPEG, PNG, WebP">
-  <meta name="author" content="imagecomprss">
-  <title>Image Compression Tool - Free Online Optimizer</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Free online image compression tool. Compress JPEG, PNG, and WebP images easily. Choose compression level and reduce image size quickly.">
+  <meta name="keywords" content="Image Compression, Compress Images, Reduce Image Size, JPEG, PNG, WebP">
+  <meta name="author" content="imagecomprss">
+  <title>Image Compression Tool - Free Online Optimizer</title>
 
-  <style>
-    :root {
-      --primary-color: #4CAF50;
-      --secondary-color: #f4f4f4;
-      --bg-color: #fff;
-      --text-color: #333;
-    }
+  <style>
+    :root {
+      --primary-color: #4CAF50;
+      --secondary-color: #f4f4f4;
+      --bg-color: #fff;
+      --text-color: #333;
+    }
 
-    * {
-      box-sizing: border-box;
-    }
+    * {
+      box-sizing: border-box;
+    }
 
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: var(--secondary-color);
-      color: var(--text-color);
-    }
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: var(--secondary-color);
+      color: var(--text-color);
+    }
 
-    header,
-    footer {
-      background-color: var(--primary-color);
-      color: #fff;
-      text-align: center;
-      padding: 1rem;
-    }
+    header,
+    footer {
+      background-color: var(--primary-color);
+      color: #fff;
+      text-align: center;
+      padding: 1rem;
+    }
 
-    main {
-      max-width: 800px;
-      margin: 2rem auto;
-      background-color: var(--bg-color);
-      padding: 2rem;
-      border-radius: 10px;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    }
+    main {
+      max-width: 800px;
+      margin: 2rem auto;
+      background-color: var(--bg-color);
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
 
-    .adsense {
-      text-align: center;
-      margin: 1.5rem 0;
-    }
+    .adsense {
+      text-align: center;
+      margin: 1.5rem 0;
+    }
 
-    .form-group {
-      margin-bottom: 1.5rem;
-    }
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
 
-    label {
-      font-weight: bold;
-      display: block;
-      margin-bottom: 0.5rem;
-    }
+    label {
+      font-weight: bold;
+      display: block;
+      margin-bottom: 0.5rem;
+    }
 
-    input[type="file"],
-    input[type="range"] {
-      width: 100%;
-      padding: 0.5rem;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-    }
+    input[type="file"],
+    input[type="range"] {
+      width: 100%;
+      padding: 0.5rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
 
-    img {
-      max-width: 100%;
-      display: block;
-      margin: 1rem 0;
-      border-radius: 10px;
-    }
+    img {
+      max-width: 100%;
+      display: block;
+      margin: 1rem 0;
+      border-radius: 10px;
+    }
 
-    .download-btn {
-      background-color: var(--primary-color);
-      color: #fff;
-      padding: 0.75rem 1.5rem;
-      text-decoration: none;
-      border-radius: 5px;
-      text-align: center;
-      display: inline-block;
-      transition: background-color 0.3s ease;
-    }
+    .download-btn {
+      background-color: var(--primary-color);
+      color: #fff;
+      padding: 0.75rem 1.5rem;
+      text-decoration: none;
+      border-radius: 5px;
+      text-align: center;
+      display: inline-block;
+      transition: background-color 0.3s ease;
+    }
 
-    .download-btn:hover {
-      background-color: #45a049;
-    }
+    .download-btn:hover {
+      background-color: #45a049;
+    }
 
-    .file-info {
-      font-size: 0.9rem;
-      margin-top: 0.5rem;
-      color: #555;
-    }
+    .file-info {
+      font-size: 0.9rem;
+      margin-top: 0.5rem;
+      color: #555;
+    }
 
-    #drop-area {
-      padding: 1.5rem;
-      border: 2px dashed var(--primary-color);
-      border-radius: 10px;
-      text-align: center;
-      background: #e9fbe9;
-      margin-bottom: 1.5rem;
-    }
+    #drop-area {
+      padding: 1.5rem;
+      border: 2px dashed var(--primary-color);
+      border-radius: 10px;
+      text-align: center;
+      background: #e9fbe9;
+      margin-bottom: 1.5rem;
+    }
 
-    #drop-area.dragover {
-      background: #d2f6d2;
-    }
+    #drop-area.dragover {
+      background: #d2f6d2;
+    }
 
-    #interstitialAd {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.8);
-      z-index: 9999;
-      justify-content: center;
-      align-items: center;
-    }
+    #interstitialAd {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+    }
 
-    #interstitialAd .modal-content {
-      background: #fff;
-      padding: 20px;
-      border-radius: 10px;
-      text-align: center;
-      max-width: 90%;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    }
+    #interstitialAd .modal-content {
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+      max-width: 90%;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
 
-    #interstitialAd button {
-      padding: 10px 20px;
-      background: var(--primary-color);
-      color: white;
-      border: none;
-      border-radius: 5px;
-      margin-top: 10px;
-    }
+    #interstitialAd button {
+      padding: 10px 20px;
+      background: var(--primary-color);
+      color: white;
+      border: none;
+      border-radius: 5px;
+      margin-top: 10px;
+    }
 
-    @media screen and (max-width: 600px) {
-      main {
-        padding: 1rem;
-      }
+    @media screen and (max-width: 600px) {
+      main {
+        padding: 1rem;
+      }
 
-      header,
-      footer {
-        padding: 0.75rem;
-      }
-    }
-  </style>
+      header,
+      footer {
+        padding: 0.75rem;
+      }
+    }
+  </style>
 </head>
 
 <body>
-  <header>
-    <h1>Image Compression Tool</h1>
-    <p>Compress your images easily with adjustable quality</p>
-  </header>
+  <header>
+    <h1>Image Compression Tool</h1>
+    <p>Compress your images easily with adjustable quality</p>
+  </header>
 
-  <main>
-    <div class="adsense">
-      <!-- Google AdSense Code -->
-      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-app-pub-1096250429789858~7533637329"
-        data-ad-slot="1096250429789858" data-ad-format="auto" data-full-width-responsive="true"></ins>
-    </div>
+  <main>
+    <div class="adsense">
+            <ins class="adsbygoogle" style="display:block" 
+        data-ad-client="ca-app-pub-XXXXXXXXXXXXXXX" 
+        data-ad-slot="YYYYYYYYYYYY" 
+        data-ad-format="auto" 
+        data-full-width-responsive="true"></ins>
+    </div>
 
-    <div id="drop-area">
-      <p><strong>Drag & Drop</strong> images here or use the file selector below</p>
-      <input type="file" id="imageInput" accept="image/*" multiple>
-    </div>
+    <div id="drop-area">
+      <p><strong>Drag & Drop</strong> images here or use the file selector below</p>
+      <input type="file" id="imageInput" accept="image/*" multiple>
+    </div>
 
-    <div class="form-group">
-      <label for="qualityRange">Compression Level: <span id="qualityValue">0.7</span></label>
-      <input type="range" id="qualityRange" min="0.1" max="1" step="0.1" value="0.7">
-    </div>
+    <div class="form-group">
+      <label for="qualityRange">Compression Level: <span id="qualityValue">0.7</span></label>
+      <input type="range" id="qualityRange" min="0.1" max="1" step="0.1" value="0.7">
+    </div>
 
-    <canvas id="canvas" style="display:none;"></canvas>
-    <img id="preview" src="" alt="Compressed Preview" />
-    <div class="file-info" id="fileSizeInfo"></div>
-    <a id="downloadLink" class="download-btn" download="compressed.webp" style="display:none;">Download Compressed Image</a>
+    <canvas id="canvas" style="display:none;"></canvas>
+    <img id="preview" src="" alt="Compressed Preview" />
+    <div class="file-info" id="fileSizeInfo"></div>
+    <a id="downloadLink" class="download-btn" download="compressed.webp" style="display:none;">Download Compressed Image</a>
 
-    <div class="adsense">
-      <!-- Another AdSense Block -->
-      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-app-pub-1096250429789858~7533637329"
-        data-ad-slot="1096250429789858" data-ad-format="auto" data-full-width-responsive="true"></ins>
-    </div>
+    <div class="adsense">
+            <ins class="adsbygoogle" style="display:block" 
+        data-ad-client="ca-app-pub-XXXXXXXXXXXXXXX" 
+        data-ad-slot="ZZZZZZZZZZZZ" 
+        data-ad-format="auto" 
+        data-full-width-responsive="true"></ins>
+    </div>
 
-    <!-- Dynamic banner ad after every 10 compressions -->
-    <div class="adsense" id="dynamicBannerAd" style="display: none;">
-      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-app-pub-1096250429789858/8027573295"
-        data-ad-slot="1096250429789858" data-ad-format="auto" data-full-width-responsive="true"></ins>
-    </div>
-  </main>
+        <div class="adsense" id="dynamicBannerAd" style="display: none;">
+      <ins class="adsbygoogle" style="display:block" 
+        data-ad-client="ca-app-pub-XXXXXXXXXXXXXXX" 
+        data-ad-slot="WWWWWWWWWWWW" 
+        data-ad-format="auto" 
+        data-full-width-responsive="true"></ins>
+    </div>
+  </main>
 
-  <!-- Interstitial Ad Modal -->
-  <div id="interstitialAd">
-    <div class="modal-content">
-      <h3>Sponsored Ad</h3>
-      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-app-pub-1096250429789858/4690995334"
-        data-ad-slot="1096250429789858" data-ad-format="auto" data-full-width-responsive="true"></ins>
-      <br />
-      <button onclick="closeInterstitial()">Close</button>
-    </div>
-  </div>
+    <div id="interstitialAd">
+    <div class="modal-content">
+      <h3>Sponsored Ad</h3>
+            <p>Ad will appear here</p>
+      <br />
+      <button onclick="closeInterstitial()">Close</button>
+    </div>
+  </div>
 
-  <footer>
-    <p>&copy; 2025 Image Compression Tool. All rights reserved.</p>
-  </footer>
+  <footer>
+    <p>&copy; 2025 Image Compression Tool. All rights reserved.</p>
+  </footer>
 
-  <script>
-    const imageInput = document.getElementById('imageInput');
-    const qualityRange = document.getElementById('qualityRange');
-    const qualityValue = document.getElementById('qualityValue');
-    const preview = document.getElementById('preview');
-    const downloadLink = document.getElementById('downloadLink');
-    const canvas = document.getElementById('canvas');
-    const fileSizeInfo = document.getElementById('fileSizeInfo');
-    const dropArea = document.getElementById('drop-area');
-    let compressCount = 0;
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-app-pub-XXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
 
-    qualityRange.addEventListener('input', () => {
-      qualityValue.textContent = qualityRange.value;
-      if (imageInput.files[0]) compressImage(imageInput.files[0]);
-    });
+  <script>
+    const imageInput = document.getElementById('imageInput');
+    const qualityRange = document.getElementById('qualityRange');
+    const qualityValue = document.getElementById('qualityValue');
+    const preview = document.getElementById('preview');
+    const downloadLink = document.getElementById('downloadLink');
+    const canvas = document.getElementById('canvas');
+    const fileSizeInfo = document.getElementById('fileSizeInfo');
+    const dropArea = document.getElementById('drop-area');
+    let compressCount = 0;
 
-    imageInput.addEventListener('change', () => {
-      if (imageInput.files[0]) compressImage(imageInput.files[0]);
-    });
+    qualityRange.addEventListener('input', () => {
+      qualityValue.textContent = qualityRange.value;
+      if (imageInput.files[0]) compressImage(imageInput.files[0]);
+    });
 
-    dropArea.addEventListener('dragover', (e) => {
-      e.preventDefault();
-      dropArea.classList.add('dragover');
-    });
+    imageInput.addEventListener('change', () => {
+      if (imageInput.files[0]) compressImage(imageInput.files[0]);
+    });
 
-    dropArea.addEventListener('dragleave', () => {
-      dropArea.classList.remove('dragover');
-    });
+    dropArea.addEventListener('dragover', (e) => {
+      e.preventDefault();
+      dropArea.classList.add('dragover');
+    });
 
-    dropArea.addEventListener('drop', (e) => {
-      e.preventDefault();
-      dropArea.classList.remove('dragover');
-      const files = e.dataTransfer.files;
-      if (files.length > 0) {
-        imageInput.files = files;
-        compressImage(files[0]);
-      }
-    });
+    dropArea.addEventListener('dragleave', () => {
+      dropArea.classList.remove('dragover');
+    });
 
-    function compressImage(file) {
-      const reader = new FileReader();
-      reader.readAsDataURL(file);
+    dropArea.addEventListener('drop', (e) => {
+      e.preventDefault();
+      dropArea.classList.remove('dragover');
+      const files = e.dataTransfer.files;
+      if (files.length > 0) {
+        imageInput.files = files;
+        compressImage(files[0]);
+      }
+    });
 
-      reader.onload = (e) => {
-        const img = new Image();
-        img.src = e.target.result;
+    function compressImage(file) {
+      const reader = new FileReader();
+      reader.readAsDataURL(file);
 
-        img.onload = () => {
-          const ctx = canvas.getContext('2d');
-          canvas.width = img.width;
-          canvas.height = img.height;
-          ctx.drawImage(img, 0, 0);
+      reader.onload = (e) => {
+        const img = new Image();
+        img.src = e.target.result;
 
-          let quality = parseFloat(qualityRange.value);
-          const mimeType = 'image/webp';
-          const fileExtension = 'webp';
-          const maxSizeKB = 90;
+        img.onload = () => {
+          const ctx = canvas.getContext('2d');
+          canvas.width = img.width;
+          canvas.height = img.height;
+          ctx.drawImage(img, 0, 0);
 
-          function tryCompress() {
-            const dataUrl = canvas.toDataURL(mimeType, quality);
-            const sizeKB = Math.round((dataUrl.length * 3 / 4) / 1024);
+          let quality = parseFloat(qualityRange.value);
+          const mimeType = 'image/webp';
+          const fileExtension = 'webp';
+          const maxSizeKB = 90;
 
-            if (sizeKB <= maxSizeKB || quality <= 0.1) {
-              preview.src = dataUrl;
-              downloadLink.href = dataUrl;
-              downloadLink.download = `compressed.${fileExtension}`;
-              downloadLink.style.display = 'inline-block';
-              fileSizeInfo.textContent = `Compressed Size: ${sizeKB} KB`;
+          function tryCompress() {
+            const dataUrl = canvas.toDataURL(mimeType, quality);
+            const sizeKB = Math.round((dataUrl.length * 3 / 4) / 1024);
 
-              compressCount++;
+            if (sizeKB <= maxSizeKB || quality <= 0.1) {
+              preview.src = dataUrl;
+              downloadLink.href = dataUrl;
+              downloadLink.download = `compressed.${fileExtension}`;
+              downloadLink.style.display = 'inline-block';
+              fileSizeInfo.textContent = `Compressed Size: ${sizeKB} KB`;
 
-              if (compressCount % 10 === 0) {
-                document.getElementById('dynamicBannerAd').style.display = 'block';
-                (adsbygoogle = window.adsbygoogle || []).push({});
-              }
+              compressCount++;
 
-              if (compressCount % 5 === 0) {
-                showInterstitial();
-              }
+              // Display dynamic banner ad after every 10 compressions
+              if (compressCount % 10 === 0) {
+                document.getElementById('dynamicBannerAd').style.display = 'block';
+                (adsbygoogle = window.adsbygoogle || []).push({});
+              }
 
-            } else {
-              quality -= 0.05;
-              tryCompress();
-            }
-          }
+            } else {
+              quality -= 0.05;
+              tryCompress();
+            }
+          }
 
-          tryCompress();
-        };
-      };
-    }
+          tryCompress();
+        };
+      };
+    }
 
-    function showInterstitial() {
-      document.getElementById('interstitialAd').style.display = 'flex';
-      (adsbygoogle = window.adsbygoogle || []).push({});
-    }
+    // This function is not tied to a true AdSense interstitial.
+    // I'm keeping it in case you want to use it for a different ad format or purpose.
+    function showInterstitial() {
+      // document.getElementById('interstitialAd').style.display = 'flex';
+      // (adsbygoogle = window.adsbygoogle || []).push({});
+    }
 
-    function closeInterstitial() {
-      document.getElementById('interstitialAd').style.display = 'none';
-    }
+    // Close the ad modal.
+    function closeInterstitial() {
+      document.getElementById('interstitialAd').style.display = 'none';
+    }
 
-    (adsbygoogle = window.adsbygoogle || []).push({});
-  </script>
+    // This pushes an empty ad object to initialize the ad display.
+    (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
 </body>
 
 </html>
